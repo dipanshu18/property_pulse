@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Roboto_Serif } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const robotoSerif = Roboto_Serif({ subsets: ["latin"], weight: "300" });
+const robotoSerif = Roboto_Serif({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Property pulse",
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={robotoSerif.className}>{children}</body>
+      <body className={robotoSerif.className}>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
