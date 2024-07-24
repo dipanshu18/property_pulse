@@ -1,7 +1,9 @@
+import AddPropertyForm from "@/components/AddPropertyForm";
+
 export default function AddProperty() {
   return (
-    <div>
-      <h1>Add property</h1>
-    </div>
+    <section className="m-5">
+      <AddPropertyForm />
+    </section>
   );
 }
