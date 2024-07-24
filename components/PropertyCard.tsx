@@ -1,14 +1,4 @@
-import {
-  AreaChart,
-  Bath,
-  Bed,
-  DollarSign,
-  Grid2X2,
-  LocateIcon,
-  LocateOffIcon,
-  MapIcon,
-  MapPin,
-} from "lucide-react";
+import { Bath, Bed, Grid2X2, MapPin } from "lucide-react";
 import Link from "next/link";
 
 export default function PropertyCard() {
@@ -19,7 +9,7 @@ export default function PropertyCard() {
           src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
           alt="Shoes"
         />
-        <div className="badge badge-secondary z-10 absolute left-0 top-0 m-5">
+        <div className="badge badge-secondary z-1 absolute left-0 top-0 m-5">
           $4200/mo
         </div>
       </figure>

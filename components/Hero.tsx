@@ -16,7 +16,7 @@ export default function Hero() {
           />
         </div>
         <select className="select select-bordered max-w-xs">
-          <option selected>All</option>
+          <option defaultValue={"All"}>All</option>
           <option>Marge</option>
           <option>Bart</option>
           <option>Lisa</option>

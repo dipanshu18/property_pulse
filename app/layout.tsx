@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Roboto_Serif } from "next/font/google";
 import "./globals.css";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { NextAuthProvider } from "./providers";
 
 const robotoSerif = Roboto_Serif({ subsets: ["latin"], weight: "400" });
 
@@ -19,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={robotoSerif.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <NextAuthProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </NextAuthProvider>
       </body>
     </html>
   );
