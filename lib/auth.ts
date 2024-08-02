@@ -11,13 +11,6 @@ export const authOptions: AuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_ID! ?? "",
       clientSecret: process.env.GOOGLE_SECRET! ?? "",
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET! ?? "",
@@ -25,6 +18,9 @@ export const authOptions: AuthOptions = {
     signOut: "/",
   },
   callbacks: {
+    async redirect({ baseUrl }) {
+      return baseUrl;
+    },
     async session({ session, user }: any) {
       if (session && session.user) {
         session.user.id = user.id;
